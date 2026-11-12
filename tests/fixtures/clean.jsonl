@@ -1,0 +1,4 @@
+{"type":"summary","summary":"Wrong summary","timestamp":"2026-11-12T16:00:00Z","sessionId":"sess-clean","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"ai-title","aiTitle":"Add a retry","timestamp":"2026-11-12T16:00:30Z","sessionId":"sess-clean","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"Add a retry around the upload."}]},"timestamp":"2026-11-12T16:01:00Z","sessionId":"sess-clean","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"The upload now retries three times.\nNext: run the upload once."}]},"timestamp":"2026-11-12T16:05:00Z","sessionId":"sess-clean","cwd":"__CWD__","gitBranch":"__BRANCH__"}

@@ -1,0 +1,3 @@
+{"type":"ai-title","aiTitle":"Split the sections","timestamp":"2026-11-12T13:00:00Z","sessionId":"sess-merge-b","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"user","message":{"role":"user","content":"Name the sections safe, keep, and merge."},"timestamp":"2026-11-12T13:05:00Z","sessionId":"sess-merge-b","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":"The sections are named."},"timestamp":"2026-11-12T13:20:00Z","sessionId":"sess-merge-b","cwd":"__CWD__","gitBranch":"__BRANCH__"}

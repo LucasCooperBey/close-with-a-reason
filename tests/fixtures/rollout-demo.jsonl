@@ -1,0 +1,3 @@
+{"type":"ai-title","aiTitle":"Check the codex log","sessionId":"codex-sess-1","cwd":"__CWD__","gitBranch":"__BRANCH__","timestamp":"2026-11-12T09:00:00Z"}
+{"type":"user","message":{"role":"user","content":"Check the codex log."},"sessionId":"codex-sess-1","cwd":"__CWD__","gitBranch":"__BRANCH__","timestamp":"2026-11-12T09:01:00Z"}
+{"type":"assistant","message":{"role":"assistant","content":"The log is readable."},"sessionId":"codex-sess-1","cwd":"__CWD__","gitBranch":"__BRANCH__","timestamp":"2026-11-12T09:05:00Z"}

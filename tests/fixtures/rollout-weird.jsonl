@@ -1,0 +1,2 @@
+{"type":"event","cwd":"/tmp/should-not-be-used","gitBranch":"secret-branch","timestamp":"2026-11-12T09:00:00Z","payload":{"text":"THIS_SHAPE_IS_NOT_A_CHAT"}}
+{"type":"response_item","payload":{"text":"THIS_SHAPE_IS_NOT_A_CHAT"}}

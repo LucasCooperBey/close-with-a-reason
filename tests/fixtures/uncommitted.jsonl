@@ -1,0 +1,3 @@
+{"type":"ai-title","aiTitle":"Save the buffer helper","timestamp":"2026-11-12T15:00:00Z","sessionId":"sess-dirty","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"Save the buffer helper."}]},"timestamp":"2026-11-12T15:01:00Z","sessionId":"sess-dirty","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"I wrote the helper."},{"type":"tool_use","name":"Edit","input":{"file_path":"__FILE__"}}]},"timestamp":"2026-11-12T15:05:00Z","sessionId":"sess-dirty","cwd":"__CWD__","gitBranch":"__BRANCH__"}

@@ -1,0 +1,3 @@
+{"type":"ai-title","aiTitle":"Ancient import","timestamp":"2026-10-01T12:00:00Z","sessionId":"sess-old","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"user","message":{"role":"user","content":"Import the old notes."},"timestamp":"2026-10-01T12:05:00Z","sessionId":"sess-old","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":"Imported."},"timestamp":"2026-10-01T12:10:00Z","sessionId":"sess-old","cwd":"__CWD__","gitBranch":"__BRANCH__"}

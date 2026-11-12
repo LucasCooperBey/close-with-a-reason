@@ -1,0 +1,3 @@
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"Rename the flag to days."}]},"timestamp":"2026-11-12T10:00:00Z","sessionId":"sess-tool","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"Renamed. The flag is now days."}]},"timestamp":"2026-11-12T10:10:00Z","sessionId":"sess-tool","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"user","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"tool-1","content":"TOOL_OUTPUT_BLOB_SHOULD_NOT_COUNT"}]},"timestamp":"2026-11-12T10:11:00Z","sessionId":"sess-tool","cwd":"__CWD__","gitBranch":"__BRANCH__"}

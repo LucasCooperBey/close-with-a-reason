@@ -1,0 +1,4 @@
+{"type":"summary","summary":"Broken transcript","timestamp":"2026-11-12T11:00:00Z","sessionId":"sess-garbage","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+this is not json
+{"type":"user","message":{"role":"user","content":[{"type":"text","text":"Ignore this title source."}]},"timestamp":"2026-11-12T11:05:00Z","sessionId":"sess-garbage","cwd":"__CWD__","gitBranch":"__BRANCH__"}
+{"type":"assistant","message":{"role":"assistant","content":[{"type":"text","text":"Parsed the lines that were real."}]},"timestamp":"2026-11-12T11:10:00Z","sessionId":"sess-garbage","cwd":"__CWD__","gitBranch":"__BRANCH__"}
