@@ -347,7 +347,8 @@ def cached(kind, key, compute):
 def run_git(cwd, args):
     try:
         return subprocess.run(
-            ["git", "-C", cwd] + list(args),
+            # core.fsmonitor can name a program in the repo's own config; never run it.
+            ["git", "-c", "core.fsmonitor=false", "-C", cwd] + list(args),
             capture_output=True,
             text=True,
             timeout=15,
@@ -731,12 +732,16 @@ def run_claude(argv, prompt):
     )
 
 
+CLAUDE_ARGV = ["claude", "-p", "--no-session-persistence", "--tools", "", "--strict-mcp-config"]
+
+
 def call_claude(prompt):
-    # --no-session-persistence keeps each call from saving a new transcript that
-    # a later list or --latest would pick up. Older versions lack the flag.
-    proc = run_claude(["claude", "-p", "--no-session-persistence"], prompt)
-    if proc.returncode != 0 and "no-session-persistence" in (proc.stderr or ""):
-        proc = run_claude(["claude", "-p"], prompt)
+    # The chat text is data, so the call gets no tools and no MCP servers: text
+    # inside a transcript cannot make it act. --no-session-persistence keeps it
+    # from saving a new chat that a later list or --latest would pick up. A
+    # Claude Code too old for these flags exits with an error, and NEXT falls
+    # back to the local step.
+    proc = run_claude(list(CLAUDE_ARGV), prompt)
     if proc.returncode != 0:
         raise RuntimeError("claude exited %s" % proc.returncode)
     text = (proc.stdout or "").strip()

@@ -92,7 +92,7 @@ closeout.py reads local files and writes local files. Nothing leaves the machine
 
 The default is `none`, so `list`, `note`, and `sweep` stay on the machine until you pass `--provider`. With `none`, the NEXT line is the last request when it has no answer yet. Once it was answered, NEXT is the line in the last assistant message that starts with Next or TODO, then the uncommitted files, then commits not pushed, and otherwise Nothing left.
 
-`claude` runs `claude -p --no-session-persistence` from a temporary folder, with the instruction and those turns on standard input, so the call does not save a new chat of its own. `ollama` posts to `http://localhost:11434/api/chat` with stream set to false, using the first model that `http://localhost:11434/api/tags` lists. `auto` uses claude when the `claude` command is on PATH, otherwise ollama if it answers within two seconds, otherwise none.
+`claude` runs `claude -p --no-session-persistence --tools "" --strict-mcp-config` from a temporary folder, with the instruction and those turns on standard input. It has no tools, so text inside a chat cannot make it act, and it does not save a new chat of its own. An older Claude Code without these flags falls back to the local NEXT line. `ollama` posts to `http://localhost:11434/api/chat` with stream set to false, using the first model that `http://localhost:11434/api/tags` lists. `auto` uses claude when the `claude` command is on PATH, otherwise ollama if it answers within two seconds, otherwise none.
 
 The verdict, the reason, and the carry line are decided on this machine. A provider writes only the NEXT line. If the provider errors, NEXT falls back to the local step and the line says the provider failed.
 

@@ -737,6 +737,24 @@ class CloseoutTests(unittest.TestCase):
         self.assertIn("Still failing on CI.", lines[4])
         self.assertEqual(lines[5], "NEXT: Nothing left.")
 
+    def test_git_never_runs_a_repo_fsmonitor_command(self):
+        # source: security review, 11-12: git status runs core.fsmonitor from the repo's own config,
+        # and closeout runs status in every repo a chat edited
+        seen = {}
+
+        class Proc(object):
+            returncode = 0
+            stdout = ""
+            stderr = ""
+
+        def fake_run(argv, **kwargs):
+            seen["argv"] = argv
+            return Proc()
+
+        with _Attr(closeout.subprocess, "run", fake_run):
+            closeout.run_git(str(self.work), ["status"])
+        self.assertEqual(seen["argv"][:3], ["git", "-c", "core.fsmonitor=false"])
+
     def test_git_status_does_not_take_the_index_lock(self):
         # source: Door 27 review-gate REJECT, 11-12: GIT_OPTIONAL_LOCKS=1 is git's default and lets status
         # refresh the index, so a git command the person runs at the same time can fail
@@ -1083,7 +1101,12 @@ class CloseoutTests(unittest.TestCase):
         self.assertEqual(result, "Ship the notes.")
         # source: Door 27 review-gate REJECT, 11-12: each claude -p call wrote a new transcript that
         # later list and --latest runs picked up, so the call now asks for no saved session
-        self.assertEqual(seen["args"], ["claude", "-p", "--no-session-persistence"])
+        # source: security review, 11-12: transcript text reached a claude -p that had tools, so text
+        # inside a chat could steer an agent; the call now runs with no tools and no MCP servers
+        self.assertEqual(
+            seen["args"],
+            ["claude", "-p", "--no-session-persistence", "--tools", "", "--strict-mcp-config"],
+        )
         self.assertEqual(seen["input"], "hello from stdin")
         self.assertTrue(seen["text"])
 
