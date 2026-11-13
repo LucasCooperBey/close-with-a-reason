@@ -1,6 +1,42 @@
-# closeout
+<h1 align="center">closeout</h1>
+
+<p align="center"><strong>Before you close a pile of AI coding chats, get a short note for each one and a sorted list: safe to close, keep open, merge.</strong></p>
+
+<p align="center">
+  <a href="https://github.com/LucasCooperBey/100-doors"><img alt="100 Doors: Door 27" src="https://img.shields.io/badge/100%20Doors-Door%2027-f94bf3"></a>
+  <a href="LICENSE"><img alt="license MIT" src="https://img.shields.io/badge/license-MIT-9aff4a"></a>
+  <img alt="python 3.9+" src="https://img.shields.io/badge/python-3.9%2B-3776ab">
+  <img alt="dependencies none" src="https://img.shields.io/badge/dependencies-none-9aff4a">
+  <img alt="runs offline by default" src="https://img.shields.io/badge/runs-offline%20by%20default-9aff4a">
+  <a href="https://github.com/LucasCooperBey/close-with-a-reason/commits/main"><img alt="last commit" src="https://img.shields.io/github/last-commit/LucasCooperBey/close-with-a-reason?color=9aff4a&label=updated"></a>
+</p>
+
+<p align="center"><a href="#quick-start">Quick start</a> · <a href="#example">Example</a> · <a href="#how-a-verdict-is-decided">How a verdict is decided</a> · <a href="#limits">Limits</a> · <a href="https://github.com/LucasCooperBey/100-doors">All 100 Doors</a></p>
 
 closeout.py reads the Claude Code transcripts on this machine, and Codex CLI sessions when those files use the same fields. For each recent chat it writes what the chat was for, which files changed, whether anything is still unsaved, and one next step, then sorts the chats into safe to close, keep open, and merge.
+
+**Who it's for:** anyone who runs several Claude Code or Codex CLI chats at once and keeps windows open because closing one might lose something.
+
+## Contents
+
+- [What's inside](#whats-inside)
+- [Quick start](#quick-start)
+- [Example](#example)
+- [How a verdict is decided](#how-a-verdict-is-decided)
+- [Providers and privacy](#providers-and-privacy)
+- [Install the skill](#install-the-skill)
+- [Limits](#limits)
+- [Part of 100 Doors](#part-of-100-doors)
+- [Credits](#credits)
+- [License](#license)
+
+## What's inside
+
+| Path | What it is |
+|---|---|
+| `closeout.py` | The tool: `list`, `note` and `sweep`, one file, standard library only |
+| `skill/closeout/SKILL.md` | A Claude Code skill that writes the note for the chat you are in |
+| `tests/` | unittest suite with sample transcripts in `tests/fixtures/` |
 
 ## Quick start
 
@@ -112,5 +148,22 @@ In the chat you are about to close, ask for the closeout skill. It runs `python3
 
 It reads the transcript format Claude Code writes today, so a format change can make it list a chat as not read. The model-written NEXT line can be wrong, so read it before you close.
 
-Made by Lucas Cooper-Bey as Door 27 of 100 Doors, one free tool a day: https://sandiegoaistudio.com/season
-If you like seeing how other people keep track of their AI work, San Diego AI Studio runs Sharathon, where builders show their own setups: https://www.skool.com/sandiegoaistudio
+## Part of 100 Doors
+
+This is the gift behind **Door 27** of [100 Doors](https://github.com/LucasCooperBey/100-doors), where I open up the things I've built with AI, one door at a time.
+
+- The door post: [X](https://x.com/i/status/2121049234799800373) · [Skool](https://www.skool.com/sandiegoaistudio/door-27-save-your-place-before-closing-an-ai-chat) · [LinkedIn](https://www.linkedin.com/feed/update/urn:li:share:7526819913777332224/)
+- Related doors: [precompact-protector](https://github.com/LucasCooperBey/precompact-protector) (Door 20) keeps your place through a compaction; [wiki-write](https://github.com/LucasCooperBey/claude-skills/tree/main/skills/wiki-write) (Door 21) files one dated note per decision
+- The season: [sandiegoaistudio.com/season](https://sandiegoaistudio.com/season)
+
+### Come see it live
+
+If you want to see how this and the rest of the doors open up into my software factory, come to [Sharathon](https://sandiegoaistudio.com/sharathon), San Diego AI Studio's show-your-setup day. Sharathon 3 is Sunday, Nov 15 in La Mesa: [RSVP on Luma](https://luma.com/5y5ju7ud).
+
+## Credits
+
+- Built by [Lucas Cooper-Bey](https://github.com/LucasCooperBey) from the closing pass he runs on his own chats
+
+## License
+
+MIT, see [LICENSE](LICENSE).
